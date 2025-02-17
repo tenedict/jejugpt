@@ -24,7 +24,6 @@ class GPTAPIView(APIView):
         # prompt 값이 없는 경우
         if not prompt:
             return Response({"error": "Prompt is required"}, status=status.HTTP_400_BAD_REQUEST)
-        pip freeze > requirements.txt
         try:
             # OpenAI API 호출
             response = client.chat.completions.create(
